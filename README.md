@@ -4,7 +4,7 @@ Built an Object Detector using Darknet and YOLOv4 to detect Traffic Signs, Traff
 ## Introduction 
 With autonomous vehicles taking off in the past several years, I want to explore one aspect that was necessary to create a good autonomous vehicle system, object tracking. So what is object tracking exactly? Best way to describe it is the "eyes of car" 
 
-![Tesla](/images/tesla.gif) 
+![Tesla](./images/tesla.gif) 
 
 ## Process
 So first I would actually understand how to go about this. I was referred to an open source Google Colab notebook by the AI Guy and used that to help springboard my modeling. To actually model this I would be using the Darknet open-source neural network and YOLO object detector to create my model. To explain the power of YOLO, in traditional object tracker it utilizes a sliding window. 
