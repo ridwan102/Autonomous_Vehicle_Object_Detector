@@ -34,7 +34,8 @@ As you can see it picks up all the traffic lights, cars, and most importantly tr
 If you recall from above, I mentioned Intersection of Union (IoU) and how that would impact our Mean Accuracy Precision (mAP). To breakdown the IoU once again, please observe the picture of the nice kitten below.
 
 ![cat](/images/cat.png)
-- [Source](https://blog.paperspace.com/mean-average-precision/)
+- [Source](https://blog.paperspace.com/mean-average-precision/)  
+
 As you can observe, there is a Ground-Truth Bounding Box and Predicted Box. The Ground-Truth Bounding Box is drawn manually before the model is built to indicate exactly where the object is within the picture. The Predicted Box is the model determining where it "thinks" the object is. The greater the intersection between the two bounding boxes the greater the Average Precision (AP) score. An AP is calculated for every single object class in each image and then all the scores are averaged to determine the mAP score, which ultimately decides how well your model is doing.
 
 ![IoU](/images/iou.png)
