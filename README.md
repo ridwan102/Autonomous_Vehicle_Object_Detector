@@ -4,13 +4,13 @@ Built an Object Detector using Darknet and YOLOv4 to detect Traffic Signs, Traff
 ## Introduction 
 With autonomous vehicles taking off in the past several years, I want to explore one aspect that was necessary to create a good autonomous vehicle system, object tracking. So what is object tracking exactly? Best way to describe it is the "eyes of car" 
 
-![Tesla](./images/tesla.gif) 
+![Tesla]./images/tesla.gif) 
 
 ## Process
 So first I would actually understand how to go about this. I was referred to an open source Google Colab notebook by the AI Guy and used that to help springboard my modeling. To actually model this I would be using the Darknet open-source neural network and YOLO object detector to create my model. To explain the power of YOLO, in traditional object tracker it utilizes a sliding window. 
 
 ## Traditional Object Detection
-![sliding_window](/images/slide_window.jpg) 
+![sliding_window](/images/sliding_window.gif) 
 [Source](https://towardsdatascience.com/how-do-self-driving-cars-see-13054aee2503)
     
 As you can observe, the window goes over every part of the image until it detects the actual object, in this case the car. There are two boxes because one is the Ground Truth Box where before it was outlined exactly where the object was located in the picture and the other is the Predicted Box which is where the model predicts the object is. This is used to calculate the Intersection of Union which (IoU) calculates the Mean Average Precision (MAP) and something we'll touch upon later. Overall, this process is very computer intensive and very inefficient for object detection. In terms of autonomous vehicles, you would not want your car to not recognize the Stop Sign until 15 seconds later and then all of a sudden stop. It needs to be instantaneous 
@@ -34,13 +34,13 @@ As you can see it picks up all the Traffic Lights, Cars, and most importantly Tr
 ## Results: Mean Accuracy Precision 
 If you recall from above, we spoke about IoU (Intersection of Union) and how that would impact our mAP (Mean Accuracy Precision). To breakdown the IoU once again, please observe the picture of the nice kitten below: 
 
-![cat](/images/cat.jpg)
+![cat](/images/cat.png)
   
 As you can observe, there is a Ground-Truth Bounding Box and Predicted Box. The Ground-Truth Bounding Box is drawn by the user manually before the model is build to indicate exactly where the object is within the picture. The Predicted Box is the model determining where it "thinks" is the object. The greater the intersection between the two or where they overlap the greater the Average Precision (AP) score will be. An AP is calculated for every single object class in each image and then all the scores are average to determine the mAP score, which ultimately decides how well your model is doing.
 
 ![IoU](/images/iou.png)
 
-![example](/images/example.jpg)
+![example](/images/example.png)
 
 Please see below for individual class mAPs and overall mAP:
 List: 
@@ -61,5 +61,5 @@ I would like to continue working on this project and deploy it on mobile applica
 Joseph Redmon created YOLO to push the boundaries of object detection. With his model we are able to build models instantaneously detect objects. However, he was approached by a military personnel that told him they use his model to track vehicles and people, which ultimately can lead to drone strikes. Redmon was so horrified hearing this that at the beginning of 2020, he proclaimed he would not be doing anymore work with computer vision (this includes object detection) going forward. What he created was so beautiful and magnificient but it shows that if it falls into the wrong hands it can lead to devestating consequences. We as Data Scientists have a responsibility to be ethical in our work for the sake of society.
 
 ## Special Thanks
-[the AI Guy](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial)
-[hunglc007](https://github.com/hunglc007/tensorflow-yolov4-tflite)
+- [the AI Guy](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial)
+- [hunglc007](https://github.com/hunglc007/tensorflow-yolov4-tflite)
