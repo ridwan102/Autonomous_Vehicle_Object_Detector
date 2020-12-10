@@ -16,8 +16,10 @@ So first I would actually understand how to go about this. I was referred to an 
 As you can observe, the window goes over every part of the image until it detects the actual object, in this case the car. There are two boxes because one is the Ground Truth Box where before it was outlined exactly where the object was located in the picture and the other is the Predicted Box which is where the model predicts the object is. This is used to calculate the Intersection of Union which (IoU) calculates the Mean Average Precision (MAP) and something we'll touch upon later. Overall, this process is very computer intensive and very inefficient for object detection. In terms of autonomous vehicles, you would not want your car to not recognize the Stop Sign until 15 seconds later and then all of a sudden stop. It needs to be instantaneous 
 
 ## YOLO
-![yoloimage](/images/yoloimage.jpg)
+
+![yoloimage](/images/yoloimage.png)
 [Source](https://towardsdatascience.com/how-do-self-driving-cars-see-13054aee2503)
+
 Introduce You Only Look Once or YOLO for short. Joseph Redmon is a computer wiz that created YOLO back in 2015, and he also maintains the Darknet neural network. (Link to YouTube TED Talk). What happens in YOLO differently than the above is there are 3-steps so the model can just go over an image/video frame one time. Grid segmentation, Classification, and Image Localization. Grid segmentation breaks down the picture into even sized gridblocks so every part of the picture is accounted for. Then the model will identify the different classes of the image, in this case "dog", "bike", and "truck". Finally, the objects are located using bounding boxes which locate where the objects are within the image, hence the name Image Localization. Putting all that together, you have your model that has successfully identified a dog, bike, and truck and the locations of all of them within an image. We'll get to the efficiency aspect of it later on.
 
 ## Image Collection and Pretrained Weights
@@ -36,7 +38,7 @@ If you recall from above, we spoke about IoU (Intersection of Union) and how tha
   
 As you can observe, there is a Ground-Truth Bounding Box and Predicted Box. The Ground-Truth Bounding Box is drawn by the user manually before the model is build to indicate exactly where the object is within the picture. The Predicted Box is the model determining where it "thinks" is the object. The greater the intersection between the two or where they overlap the greater the Average Precision (AP) score will be. An AP is calculated for every single object class in each image and then all the scores are average to determine the mAP score, which ultimately decides how well your model is doing.
 
-![IoU](/images/iou.jpg)
+![IoU](/images/iou.png)
 
 ![example](/images/example.jpg)
 
@@ -60,4 +62,4 @@ Joseph Redmon created YOLO to push the boundaries of object detection. With his 
 
 ## Special Thanks
 [the AI Guy](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial)
-[hunglc007] (https://github.com/hunglc007/tensorflow-yolov4-tflite)
+[hunglc007](https://github.com/hunglc007/tensorflow-yolov4-tflite)
